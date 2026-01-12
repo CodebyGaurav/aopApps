@@ -1,5 +1,6 @@
 package com.codebygaurav.aopApps.services.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -7,6 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @ActiveProfiles("test")
+@Slf4j
 class ShipmentServiceImplTest {
 
     @Autowired
@@ -14,7 +16,8 @@ class ShipmentServiceImplTest {
 
     @Test
     void aopTestOrderPackage(){
-        shipmentService.orderPackage(4L);
+        String orderString  = shipmentService.orderPackage(4L);
+        log.info("orderString : {}",orderString);
     }
 
     @Test
